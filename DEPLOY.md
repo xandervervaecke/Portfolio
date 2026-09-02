@@ -26,7 +26,7 @@ The **Actions** tab shows a "Deploy to GitHub Pages" run. When it goes green the
 site is live at:
 
 ```
-https://xanderv-2364363.github.io/Portfolio/
+https://xandervervaecke.github.io/Portfolio/
 ```
 
 Every later push to `main` redeploys automatically. You can also re-run a deploy
@@ -68,7 +68,7 @@ and, for IPv6, four **AAAA** records, host `@`:
 Then one **CNAME** record so `www` works too:
 
 ```
-host: www    value: xanderv-2364363.github.io.
+host: www    value: xandervervaecke.github.io.
 ```
 
 If you would rather use only `www.example.com`, the single CNAME record is
