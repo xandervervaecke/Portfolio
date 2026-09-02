@@ -1,0 +1,5 @@
+- projects finishesn
+ 
+    - thesis video opnemen/fotos
+- education schrijven met graad van onderscheiding
+- modellen toevoegen en frontend laten maken

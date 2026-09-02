@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PORTFOLIO_SYSTEM_v1.0 - Education</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@800;900&amp;family=JetBrains+Mono:wght@500&amp;family=Source+Sans+3:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#202222",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#464653",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#626363",
+                        "surface-dim": "#dadada",
+                        "surface-bright": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "outline": "#767684",
+                        "secondary-container": "#e0dfdf",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-tertiary-container": "#888989",
+                        "on-surface": "#1b1b1b",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1b1b",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-fixed": "#e0e0ff",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-primary-fixed-variant": "#3239a3",
+                        "primary": "#00003c",
+                        "primary-fixed-dim": "#bfc2ff",
+                        "on-primary-fixed": "#00006e",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary-container": "#777eea",
+                        "on-secondary-fixed-variant": "#464747",
+                        "primary-container": "#000080",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-tint": "#4b53bc",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "outline-variant": "#c6c5d5",
+                        "inverse-surface": "#303030",
+                        "background": "#f9f9f9",
+                        "secondary": "#5d5e5f",
+                        "inverse-primary": "#bfc2ff",
+                        "surface": "#f9f9f9",
+                        "on-error": "#ffffff",
+                        "tertiary": "#090b0c",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "grid-unit": "8px",
+                        "window-padding": "4px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Anybody"],
+                        "window-title": ["\"Source Sans 3\""],
+                        "headline-xl": ["Anybody"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["\"Source Sans 3\""],
+                        "headline-lg": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "32px", "fontWeight": "800" }],
+                        "window-title": ["13px", { "lineHeight": "16px", "fontWeight": "700" }],
+                        "headline-xl": ["80px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Retro 3D Bevels */
+        .window-bevel {
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #808080;
+            border-bottom: 2px solid #808080;
+        }
+        .window-bevel-pressed {
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+        }
+        .window-bevel-inset {
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-bottom: 2px solid #ffffff;
+            border-right: 2px solid #ffffff;
+        }
+        
+        /* Notebook Paper Background */
+        .notebook-paper {
+            background-color: #f9f9f9;
+            background-image: 
+                linear-gradient(#e2e2e2 1px, transparent 1px),
+                linear-gradient(90deg, #ffdad6 1px, transparent 1px);
+            background-size: 100% 24px, 100% 100%;
+            background-position: 0 0, 40px 0;
+        }
+
+        /* Hand-drawn underline SVG */
+        .hand-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .hand-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: -5%;
+            width: 110%;
+            height: 4px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0,5 Q20,1 40,8 T80,3 T100,6' stroke='%23000080' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            pointer-events: none;
+        }
+        .hand-highlight {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+        .hand-highlight::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            width: 110%;
+            height: 80%;
+            background-color: rgba(255, 218, 214, 0.6); /* error-container */
+            transform: translateY(-50%) rotate(-1deg);
+            z-index: -1;
+            border-radius: 2px;
+        }
+
+        /* Tape accents */
+        .tape {
+            position: absolute;
+            width: 80px;
+            height: 25px;
+            background-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            backdrop-filter: blur(2px);
+            z-index: 10;
+        }
+        .tape-tl { top: -10px; left: -20px; transform: rotate(-15deg); }
+        .tape-tr { top: -10px; right: -20px; transform: rotate(15deg); }
+
+        /* Newsprint / Dither effect */
+        .dithered-image {
+            filter: grayscale(100%) contrast(120%) brightness(110%);
+            mix-blend-mode: multiply;
+        }
+    </style>
+</head>
+<body class="bg-secondary-fixed dark:bg-tertiary min-h-screen flex flex-col font-body-md text-on-surface notebook-paper" style="background-color: #c0c0c0; background-image: none;">
+<!-- Grid Paper Pattern overlay for the body background -->
+<div class="fixed inset-0 pointer-events-none opacity-20" style="background-image: radial-gradient(#000000 1px, transparent 1px); background-size: 8px 8px;"></div>
+<!-- TopAppBar -->
+<header class="bg-primary dark:bg-primary font-window-title text-window-title text-on-primary uppercase tracking-wider docked full-width top-0 border-b-2 border-secondary flex justify-between items-center w-full h-8 px-2 z-50 shadow-sm fixed">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<h1 class="font-bold">PORTFOLIO_SYSTEM_v1.0</h1>
+</div>
+<div class="flex items-center gap-1">
+<button class="bg-secondary-fixed w-5 h-5 flex items-center justify-center window-bevel hover:window-bevel-pressed active:window-bevel-pressed text-on-surface">
+<span class="material-symbols-outlined text-[14px]">minimize</span>
+</button>
+<button class="bg-secondary-fixed w-5 h-5 flex items-center justify-center window-bevel hover:window-bevel-pressed active:window-bevel-pressed text-on-surface">
+<span class="material-symbols-outlined text-[14px]">fullscreen</span>
+</button>
+<button class="bg-secondary-fixed w-5 h-5 flex items-center justify-center window-bevel hover:window-bevel-pressed active:window-bevel-pressed text-on-surface font-bold">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-16 pb-20 px-gutter md:px-margin-desktop flex flex-col items-center relative z-10 w-full max-w-[1200px] mx-auto">
+<!-- Main Window Container -->
+<section class="bg-surface-container-lowest w-full window-bevel mb-12 relative shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+<div class="tape tape-tl"></div>
+<div class="tape tape-tr"></div>
+<!-- Window Title Bar -->
+<div class="bg-primary-container h-6 flex items-center px-2">
+<h2 class="font-window-title text-window-title text-on-primary">Education_Record.exe</h2>
+</div>
+<!-- Window Content (Notebook Paper) -->
+<div class="p-8 notebook-paper min-h-[600px]">
+<header class="mb-12 relative">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase text-center hand-underline mb-4">
+                        Academic <span class="hand-highlight">Background</span>
+</h1>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant max-w-2xl mx-auto">
+                        C:\USER\PROFILE\EDUCATION&gt; SYSTEM LOG OF FORMAL TRAINING AND QUALIFICATIONS. ALL RECORDS VERIFIED.
+                    </p>
+<!-- Decorative hand-drawn arrow pointing down -->
+<div class="absolute left-1/2 transform -translate-x-1/2 -bottom-10 opacity-70">
+<span class="material-symbols-outlined text-4xl text-primary-container" style="transform: rotate(90deg);">subdirectory_arrow_right</span>
+</div>
+</header>
+<div class="relative mt-16">
+<!-- Degrees Horizontal List -->
+<div class="flex flex-col md:flex-row gap-4 mb-12">
+<!-- PhD -->
+<div class="flex-1 bg-surface-container-lowest window-bevel p-4 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest window-bevel-inset flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-2xl text-on-surface">school</span>
+</div>
+<div>
+<h3 class="font-window-title text-sm font-bold text-primary-container">Ph.D. in Computer Science</h3>
+<p class="font-label-sm text-[10px] text-on-surface-variant">University of Technology • 2018 - 2022</p>
+</div>
+</div>
+<!-- MA -->
+<div class="flex-1 bg-surface-container-lowest window-bevel p-4 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest window-bevel-inset flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-2xl text-on-surface">architecture</span>
+</div>
+<div>
+<h3 class="font-window-title text-sm font-bold text-primary-container">M.A. Interaction Design</h3>
+<p class="font-label-sm text-[10px] text-on-surface-variant">Institute of Art &amp; Design • 2015 - 2017</p>
+</div>
+</div>
+<!-- BFA -->
+<div class="flex-1 bg-surface-container-lowest window-bevel p-4 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest window-bevel-inset flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-2xl text-on-surface">draw</span>
+</div>
+<div>
+<h3 class="font-window-title text-sm font-bold text-primary-container">B.F.A. Graphic Design</h3>
+<p class="font-label-sm text-[10px] text-on-surface-variant">State College of the Arts • 2011 - 2015</p>
+</div>
+</div>
+</div>
+<!-- Papers Section -->
+<div class="mt-8 border-t-2 border-dashed border-outline pt-8">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-2xl text-primary mb-8 text-center">Selected Publications</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative">
+<!-- Paper Card 1 -->
+<article class="bg-white p-4 pb-8 shadow-[2px_4px_12px_rgba(0,0,0,0.2)] rotate-2 hover:rotate-0 transition-transform cursor-pointer relative z-10 border border-surface-container-highest group window-bevel">
+<div class="tape tape-tl top-[5px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-[-5deg]"></div>
+<div class="aspect-[4/3] bg-surface-container-lowest overflow-hidden window-bevel-inset mb-4 flex justify-center items-center">
+<img alt="" class="w-full h-full object-cover dithered-image group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ1K4eNSxTvqBXmWPWyyfffaTX1ZL49LLnTvANuH8NbFWPOmaVkn5ufibvUpREdbFQRlHLHjkng1v_twUGUaERtSDQlskKM0GA2ddESmQhMvQA5nn6wclEh0fA51qWeVH1HmH3zry4E_LiUh4coRcHW-56qMm6UvKGs9YDLrG4MicgN5tihLKb5jtVOfFAmzLXJVY_m0m6VWygoxFJKYOU03341VCj4OhkHc8WmaCwC5VJzAo6ckZDClR3dKUzY_2Mow"/>
+</div>
+<h3 class="font-window-title text-window-title text-lg mb-2 text-primary-container underline decoration-wavy decoration-outline-variant">Tactile Interfaces in Post-Digital Environments</h3>
+<div class="flex flex-wrap gap-2 mb-2">
+<span class="font-label-sm text-[10px] bg-secondary-fixed window-bevel px-1 text-black">HCI</span>
+<span class="font-label-sm text-[10px] bg-secondary-fixed window-bevel px-1 text-black">Computer Vision</span>
+<span class="font-label-sm text-[10px] bg-secondary-fixed window-bevel px-1 text-black">Published</span>
+</div>
+<p class="font-label-sm text-[11px] text-on-surface-variant leading-snug">Exploring physical affordances in digital interfaces. Focuses on brutalist UI paradigms and user tangibility.</p>
+</article>
+<!-- Paper Card 2 -->
+<article class="bg-white p-4 pb-8 shadow-[2px_4px_12px_rgba(0,0,0,0.2)] -rotate-3 hover:rotate-0 transition-transform cursor-pointer relative z-10 border border-surface-container-highest group window-bevel mt-4 md:mt-12">
+<div class="tape tape-tr top-[5px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-[5deg]"></div>
+<div class="aspect-[4/3] bg-surface-container-lowest overflow-hidden window-bevel-inset mb-4 flex justify-center items-center">
+<img alt="" class="w-full h-full object-cover dithered-image group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6A9Br_kbUDKxlkR6T1UR3NfNWeSAVJRDoR85SWYyYcPraB0eAWeKNHMF6j3sqvZUkxfdYZ9XNcOgR4XFGVNO0I5XaZ4APYzmYL72srH8CwfctPiu6YDUVXJZvvB4OsPDPWbttqPcf22ehBbF23a-XSc9-vzuUi1yMtxGD98e-h6-D4VuDXA3b7NFZt19A_YEJvJJMYX-sz-uBGC4w8xkvVDh7Mw-R1a4duwP4ZXhLr1ZK1S6g0ObNgpL9fKj4J9kH9w"/>
+</div>
+<h3 class="font-window-title text-window-title text-lg mb-2 text-primary-container underline decoration-wavy decoration-outline-variant">Nostalgia as a Functional Mechanism in UX</h3>
+<div class="flex flex-wrap gap-2 mb-2">
+<span class="font-label-sm text-[10px] bg-secondary-fixed window-bevel px-1 text-black">UX</span>
+<span class="font-label-sm text-[10px] bg-secondary-fixed window-bevel px-1 text-black">Typography</span>
+<span class="font-label-sm text-[10px] bg-secondary-fixed window-bevel px-1 text-black">Research</span>
+</div>
+<p class="font-label-sm text-[11px] text-on-surface-variant leading-snug">An analysis of retro aesthetics, grid systems, and how nostalgia drives engagement in modern web applications.</p>
+</article>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Desktop: Hidden, Mobile: Visible) -->
+<nav class="md:hidden flex items-center px-1 gap-1 w-full bg-secondary-fixed dark:bg-tertiary-fixed-dim fixed bottom-0 z-50 h-12 shadow-[inset_2px_2px_0px_rgba(255,255,255,1)] border-t-2 border-white">
+<!-- Not functionally active tab styling applied to 'About' as closest semantic match for Education -->
+<button class="flex items-center gap-2 px-3 h-10 border-2 border-t-white border-l-white border-b-outline border-r-outline hover:bg-surface-container-highest flex-1 justify-center">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-sm text-label-sm uppercase hidden sm:inline">Start</span>
+</button>
+<button class="flex items-center gap-2 bg-secondary-container dark:bg-tertiary-container px-3 h-10 border-2 border-t-outline border-l-outline border-b-white border-r-white translate-y-0.5 hover:bg-surface-container-highest flex-1 justify-center">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm uppercase hidden sm:inline">About</span>
+</button>
+<button class="flex items-center gap-2 px-3 h-10 border-2 border-t-white border-l-white border-b-outline border-r-outline hover:bg-surface-container-highest flex-1 justify-center">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-label-sm text-label-sm uppercase hidden sm:inline">Projects</span>
+</button>
+<button class="flex items-center gap-2 px-3 h-10 border-2 border-t-white border-l-white border-b-outline border-r-outline hover:bg-surface-container-highest flex-1 justify-center">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-sm text-label-sm uppercase hidden sm:inline">Contact</span>
+</button>
+</nav>
+<!-- Desktop Taskbar (Hidden on mobile) -->
+<nav class="hidden md:flex items-center px-1 gap-1 w-full bg-secondary-fixed dark:bg-tertiary-fixed-dim fixed bottom-0 z-50 h-12 shadow-[inset_2px_2px_0px_rgba(255,255,255,1)] border-t-2 border-white justify-between">
+<div class="flex gap-1 h-full items-center">
+<button class="flex items-center gap-2 px-4 h-10 border-2 border-t-white border-l-white border-b-outline border-r-outline hover:bg-surface-container-highest mx-1">
+<span class="material-symbols-outlined font-bold text-primary-container">desktop_windows</span>
+<span class="font-headline-lg-mobile text-[16px] font-black italic">Start</span>
+</button>
+<div class="w-px h-8 bg-outline mx-2 border-r border-white"></div>
+<!-- Taskbar active items -->
+<button class="flex items-center gap-2 bg-secondary-container dark:bg-tertiary-container px-3 h-10 border-2 border-t-outline border-l-outline border-b-white border-r-white translate-y-0.5 w-48 truncate">
+<span class="material-symbols-outlined text-sm">school</span>
+<span class="font-label-sm text-label-sm truncate">Education_Record.exe</span>
+</button>
+</div>
+<div class="h-10 border-2 border-t-outline border-l-outline border-b-white border-r-white px-3 flex items-center bg-secondary-container mr-1">
+<span class="font-label-sm text-label-sm">4:20 PM</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,678 @@
+/* ==========================================================================
+   PORTFOLIO_SYSTEM v1.0 — Windows 95 x paper-zine design system
+   Tokens + primitives lifted from the Stitch "Desktop Scrapbook" spec.
+   ========================================================================== */
+
+:root {
+  /* --- 8-bit era surfaces --- */
+  --face: #c0c0c0;
+  --face-light: #dfdfdf;
+  --face-dark: #a8a8a8;
+  --hi: #ffffff;
+  --lo: #808080;
+  --lo-deep: #404040;
+  --ink: #1b1b1b;
+  --ink-soft: #464653;
+  --ink-faint: #6b6b78;
+
+  /* --- print neutrals --- */
+  --paper: #ffffff;
+  --paper-dim: #f3f3f3;
+  --paper-grid: #e5e5e5;
+  --bg: #f4f4f4;
+
+  /* --- accents --- */
+  --navy: #000080;
+  --navy-deep: #00003c;
+  --navy-soft: #e0e0ff;
+  --teal: #008080;
+  --legal: #fff9c4;
+  --tape: rgba(255, 255, 214, 0.62);
+  --outline: #767684;
+  --outline-variant: #c6c5d5;
+  --danger: #ba1a1a;
+
+  /* --- rhythm --- */
+  --u: 8px;
+  --gutter: 16px;
+  --shell: 1180px;
+  /* The portfolio window itself: wider than a text column, since it holds the
+     project grid and the tab chrome. */
+  --shell-wide: 1680px;
+
+  /* The mat the framed hero sits on. Deliberately dark: it matches the sky
+     beyond the office, so keep sceneConfig.render.background in step with it. */
+  --stage: #16130f;
+  --stage-edge: #0a0908;
+
+  /* The ground the portfolio window sits on once it opens — light, so the
+     window reads as a document on a desk rather than a panel in a void. */
+  --page: #f2f0ec;
+
+  /* --- type --- */
+  --font-display: 'Anybody', 'Arial Black', system-ui, sans-serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', Tahoma, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --ease-snap: cubic-bezier(0.2, 0.9, 0.25, 1);
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Blue-line graph paper, the ground everything is glued onto. */
+.grid-paper {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--paper-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--paper-grid) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* ==========================================================================
+   1. BEVELS — the whole depth model, 2px hard edges only.
+   ========================================================================== */
+
+.bevel-raised {
+  border: 2px solid;
+  border-top-color: var(--hi);
+  border-left-color: var(--hi);
+  border-right-color: var(--lo);
+  border-bottom-color: var(--lo);
+  background-color: var(--face);
+}
+
+.bevel-pressed {
+  border: 2px solid;
+  border-top-color: var(--lo);
+  border-left-color: var(--lo);
+  border-right-color: var(--hi);
+  border-bottom-color: var(--hi);
+  background-color: var(--face);
+}
+
+.bevel-inset {
+  border: 2px solid;
+  border-top-color: var(--lo);
+  border-left-color: var(--lo);
+  border-right-color: var(--hi);
+  border-bottom-color: var(--hi);
+  background-color: var(--paper);
+}
+
+.bevel-groove {
+  border: 1px solid var(--lo);
+  border-right-color: var(--hi);
+  border-bottom-color: var(--hi);
+}
+
+.hard-shadow {
+  box-shadow: 4px 4px 0 0 #000;
+}
+
+.hard-shadow-sm {
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+/* ==========================================================================
+   2. TYPE
+   ========================================================================== */
+
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.t-headline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.t-window {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.t-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+}
+
+.t-mono-xs {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+
+.t-body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Section heading: stamped caps with a rule that draws itself in. */
+.sec-head {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 var(--gutter);
+  padding-bottom: 6px;
+  position: relative;
+}
+
+.sec-head::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 64px;
+  background: var(--navy);
+}
+
+.hl-marker {
+  background: linear-gradient(transparent 62%, var(--navy-soft) 62%);
+}
+
+/* ==========================================================================
+   3. BUTTONS & CONTROLS
+   ========================================================================== */
+
+.w95-btn {
+  font-family: var(--font-body);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--face);
+  border: 2px solid;
+  border-top-color: var(--hi);
+  border-left-color: var(--hi);
+  border-right-color: var(--lo);
+  border-bottom-color: var(--lo);
+  padding: 5px 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  user-select: none;
+  transition:
+    background-color 0.12s linear,
+    transform 0.12s var(--ease-snap),
+    filter 0.12s linear;
+}
+
+.w95-btn:hover {
+  background: var(--face-light);
+  transform: translate(-1px, -1px);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.w95-btn:focus-visible {
+  outline: 1px dotted #000;
+  outline-offset: -5px;
+}
+
+.w95-btn:active {
+  border-top-color: var(--lo);
+  border-left-color: var(--lo);
+  border-right-color: var(--hi);
+  border-bottom-color: var(--hi);
+  transform: translate(0, 0);
+  box-shadow: none;
+  padding: 6px 13px 4px 15px;
+}
+
+.w95-btn.is-on {
+  border-top-color: var(--lo);
+  border-left-color: var(--lo);
+  border-right-color: var(--hi);
+  border-bottom-color: var(--hi);
+  background:
+    repeating-conic-gradient(var(--face-light) 0% 25%, var(--face) 0% 50%) 50% / 4px 4px;
+}
+
+/* Tiny square title-bar buttons (minimise / maximise / close) */
+.w95-sysbtn {
+  width: 18px;
+  height: 16px;
+  flex: 0 0 auto;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  background: var(--face);
+  border: 2px solid;
+  border-top-color: var(--hi);
+  border-left-color: var(--hi);
+  border-right-color: var(--lo);
+  border-bottom-color: var(--lo);
+  cursor: pointer;
+  color: #000;
+  transition: background-color 0.1s linear;
+}
+
+.w95-sysbtn:hover {
+  background: var(--face-light);
+}
+
+.w95-sysbtn:active {
+  border-top-color: var(--lo);
+  border-left-color: var(--lo);
+  border-right-color: var(--hi);
+  border-bottom-color: var(--hi);
+}
+
+.w95-sysbtn svg {
+  display: block;
+  shape-rendering: crispEdges;
+}
+
+.w95-sysbtn.is-close:hover {
+  background: #d94b3f;
+  color: #fff;
+}
+
+/* Text inputs & selects */
+.w95-field {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid;
+  border-top-color: var(--lo);
+  border-left-color: var(--lo);
+  border-right-color: var(--hi);
+  border-bottom-color: var(--hi);
+  padding: 5px 8px;
+  outline: none;
+  border-radius: 0;
+  appearance: none;
+}
+
+.w95-field:focus {
+  box-shadow: inset 0 0 0 1px var(--navy);
+}
+
+.w95-field::placeholder {
+  color: #9a9aa6;
+}
+
+/* Pixel checkbox */
+.w95-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.w95-check input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.w95-check .box {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  background: var(--paper);
+  border: 2px solid;
+  border-top-color: var(--lo);
+  border-left-color: var(--lo);
+  border-right-color: var(--hi);
+  border-bottom-color: var(--hi);
+  display: grid;
+  place-items: center;
+  color: #000;
+  transition: background-color 0.12s linear;
+}
+
+.w95-check:hover .box {
+  background: var(--navy-soft);
+}
+
+.w95-check .box svg {
+  opacity: 0;
+  transform: scale(0.4);
+  transition: all 0.14s var(--ease-snap);
+  shape-rendering: crispEdges;
+}
+
+.w95-check input:checked + .box svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.w95-check input:focus-visible + .box {
+  outline: 1px dotted #000;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   4. TAG CHIPS
+   ========================================================================== */
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--face);
+  border: 2px solid;
+  border-top-color: var(--hi);
+  border-left-color: var(--hi);
+  border-right-color: var(--lo);
+  border-bottom-color: var(--lo);
+  padding: 1px 6px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition:
+    transform 0.14s var(--ease-snap),
+    color 0.14s linear,
+    background-color 0.14s linear;
+}
+
+button.chip {
+  cursor: pointer;
+}
+
+button.chip:hover {
+  transform: translateY(-2px);
+  color: var(--navy);
+  background: var(--face-light);
+}
+
+.chip.is-active {
+  border-top-color: var(--lo);
+  border-left-color: var(--lo);
+  border-right-color: var(--hi);
+  border-bottom-color: var(--hi);
+  background: var(--navy);
+  color: #fff;
+}
+
+.chip.is-extra {
+  background: var(--legal);
+  border-right-color: #c9c39a;
+  border-bottom-color: #c9c39a;
+}
+
+.chip.is-extra.is-active {
+  background: var(--navy);
+  color: #fff;
+}
+
+/* ==========================================================================
+   5. PAPER FURNITURE — tape, torn edges, dither, polaroids
+   ========================================================================== */
+
+.tape {
+  position: absolute;
+  width: 74px;
+  height: 22px;
+  background: var(--tape);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+  z-index: 12;
+  pointer-events: none;
+  transition: transform 0.35s var(--ease-snap);
+}
+
+.tape::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.5) 0 2px,
+    rgba(255, 255, 255, 0) 2px 5px
+  );
+}
+
+.torn-bottom {
+  clip-path: polygon(
+    0% 0%, 100% 0%,
+    100% calc(100% - 10px), 95% 100%, 90% calc(100% - 12px), 85% calc(100% - 2px),
+    80% calc(100% - 10px), 75% 100%, 70% calc(100% - 15px), 65% calc(100% - 5px),
+    60% calc(100% - 10px), 55% 100%, 50% calc(100% - 12px), 45% calc(100% - 2px),
+    40% calc(100% - 10px), 35% 100%, 30% calc(100% - 15px), 25% calc(100% - 5px),
+    20% calc(100% - 10px), 15% 100%, 10% calc(100% - 12px), 5% calc(100% - 2px),
+    0% calc(100% - 10px)
+  );
+}
+
+/* Dashed "cut here" rule */
+.rule-dashed {
+  border: 0;
+  border-top: 2px dashed var(--outline-variant);
+  margin: 32px 0;
+}
+
+.rule-torn {
+  height: 12px;
+  margin: 32px 0;
+  background: var(--outline-variant);
+  clip-path: polygon(
+    0 40%, 4% 10%, 9% 70%, 14% 20%, 19% 60%, 25% 15%, 31% 75%, 37% 25%,
+    43% 65%, 50% 10%, 57% 70%, 63% 20%, 69% 60%, 75% 15%, 81% 72%, 87% 22%,
+    93% 62%, 100% 30%, 100% 100%, 0 100%
+  );
+}
+
+.dither {
+  filter: grayscale(18%) sepia(14%) contrast(114%) brightness(104%);
+}
+
+/* Photo taped to the page */
+.polaroid {
+  background: #fff;
+  padding: 10px 10px 16px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 3px 5px 14px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.35s var(--ease-snap),
+    box-shadow 0.35s var(--ease-snap);
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) translateY(-6px) scale(1.012);
+  box-shadow: 6px 12px 26px rgba(0, 0, 0, 0.26);
+}
+
+.sticky-note {
+  background: var(--legal);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.18);
+}
+
+/* ==========================================================================
+   6. SCROLLBARS — chunky, beveled, unmistakably 95.
+   ========================================================================== */
+
+.w95-scroll {
+  scrollbar-width: auto;
+  scrollbar-color: var(--face) #ececec;
+}
+
+.w95-scroll::-webkit-scrollbar {
+  width: 17px;
+  height: 17px;
+}
+
+.w95-scroll::-webkit-scrollbar-track {
+  background:
+    repeating-conic-gradient(#ffffff 0% 25%, var(--face) 0% 50%) 50% / 2px 2px;
+}
+
+.w95-scroll::-webkit-scrollbar-thumb {
+  background: var(--face);
+  border: 2px solid;
+  border-top-color: var(--hi);
+  border-left-color: var(--hi);
+  border-right-color: var(--lo);
+  border-bottom-color: var(--lo);
+}
+
+.w95-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--face-light);
+}
+
+.w95-scroll::-webkit-scrollbar-corner {
+  background: var(--face);
+}
+
+/* ==========================================================================
+   7. LINKS
+   ========================================================================== */
+
+.a-wavy {
+  color: var(--navy);
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--outline-variant);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s linear, color 0.2s linear;
+}
+
+.a-wavy:hover {
+  text-decoration-color: var(--navy);
+}
+
+/* ==========================================================================
+   8. ANIMATIONS
+   ========================================================================== */
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes twinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  40% { transform: scale(1.28) rotate(12deg); }
+  70% { transform: scale(0.94) rotate(-6deg); }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes zoom-open {
+  from { transform: scale(0.86) translateY(18px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes zoom-close {
+  from { transform: scale(1) translateY(0); opacity: 1; }
+  to { transform: scale(0.9) translateY(10px); opacity: 0; }
+}
+
+@keyframes pane-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes draw-line {
+  from { width: 0; }
+}
+
+.anim-blink { animation: blink 1.05s step-end infinite; }
+.anim-float { animation: float-y 3.4s ease-in-out infinite; }
+
+.pane {
+  animation: pane-in 0.32s var(--ease-snap) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ==========================================================================
+   9. HELPERS
+   ========================================================================== */
+
+.stack > * + * {
+  margin-top: var(--gutter);
+}
+
+.row-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--navy);
+}

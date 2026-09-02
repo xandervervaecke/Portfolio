@@ -1,0 +1,53 @@
+{
+  "experience": [
+    {
+      "id": "androme",
+      "company": "Androme",
+      "companyNote": "UHasselt Spin-off",
+      "role": "AI Engineer",
+      "period": "2025",
+      "startYear": 2025,
+      "endYear": 2025,
+      "highlights": [
+        "Developed an AI-powered translation system for use in large-scale retail environments",
+        "Developed an automated product categorization system using machine learning techniques",
+        "Designed and implemented a piracy detection system, applying multiple AI methods for anomaly detection and classification",
+        "Worked on production-oriented AI pipelines, taking responsibility for problem definition, system design, and implementation of various solutions"
+      ],
+      "technologies": [],
+      "image": "images/androme.png"
+    },
+    {
+      "id": "alpine-digital",
+      "company": "Alpine Digital",
+      "companyNote": null,
+      "role": "Software Engineering Intern",
+      "period": "2023",
+      "startYear": 2023,
+      "endYear": 2023,
+      "highlights": [
+        "Contributed to the development of the \"Boardgamers\" mobile application",
+        "Worked with React Native and PHP Laravel",
+        "Applied Agile methodologies and GitHub-based development practices",
+        "Bachelor's thesis at PXL focused on the performance of React Native"
+      ],
+      "technologies": ["React Native", "PHP", "Laravel", "Git", "GitHub"],
+      "image": "images/alpine.png"
+    },
+    {
+      "id": "wisemen",
+      "company": "Wisemen",
+      "companyNote": null,
+      "role": "Software Engineering Intern",
+      "period": "2022",
+      "startYear": 2022,
+      "endYear": 2022,
+      "highlights": [
+        "Contributed to the development of a PIM system",
+        "Worked with Vue and Node.js"
+      ],
+      "technologies": ["Vue", "Node.js"],
+        "image": "images/wisemen.png"
+    }
+  ]
+}

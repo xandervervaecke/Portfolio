@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>PhD Portfolio - Windows 95 Paper Aesthetic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;800;900&amp;family=JetBrains+Mono:wght@500&amp;family=Source+Sans+3:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#3239a3",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed-variant": "#464747",
+                      "surface": "#f9f9f9",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#e0e0ff",
+                      "inverse-surface": "#303030",
+                      "secondary-fixed": "#e3e2e2",
+                      "tertiary-container": "#202222",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "surface-bright": "#f9f9f9",
+                      "on-surface": "#1b1b1b",
+                      "on-surface-variant": "#464653",
+                      "surface-container-high": "#e8e8e8",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "primary": "#00003c",
+                      "surface-variant": "#e2e2e2",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#c6c5d5",
+                      "secondary": "#5d5e5f",
+                      "on-primary-fixed": "#00006e",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "tertiary": "#090b0c",
+                      "on-secondary-container": "#626363",
+                      "primary-container": "#000080",
+                      "surface-container": "#eeeeee",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "primary-fixed-dim": "#bfc2ff",
+                      "surface-container-low": "#f3f3f3",
+                      "outline": "#767684",
+                      "surface-container-highest": "#e2e2e2",
+                      "inverse-primary": "#bfc2ff",
+                      "on-error-container": "#93000a",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#888989",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed": "#e2e2e2",
+                      "secondary-container": "#e0dfdf",
+                      "background": "#f9f9f9",
+                      "on-background": "#1b1b1b",
+                      "surface-tint": "#4b53bc",
+                      "on-primary-container": "#777eea",
+                      "error-container": "#ffdad6",
+                      "on-secondary": "#ffffff",
+                      "surface-dim": "#dadada",
+                      "on-secondary-fixed": "#1a1c1c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "grid-unit": "8px",
+                      "window-padding": "4px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "headline-xl": [
+                              "Anybody"
+                      ],
+                      "headline-lg-mobile": [
+                              "Anybody"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "window-title": [
+                              "\"Source Sans 3\""
+                      ],
+                      "headline-lg": [
+                              "Anybody"
+                      ],
+                      "body-md": [
+                              "\"Source Sans 3\""
+                      ]
+              },
+              "fontSize": {
+                      "headline-xl": [
+                              "80px",
+                              {
+                                      "lineHeight": "80px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "900"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "window-title": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f4f4f4;
+            background-image: 
+                linear-gradient(#e5e5e5 1px, transparent 1px),
+                linear-gradient(90deg, #e5e5e5 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .win95-window {
+            background: #c0c0c0;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #808080;
+            border-right: 2px solid #808080;
+            box-shadow: 1px 1px 0 #000;
+        }
+
+        .win95-titlebar {
+            background: #000080;
+            color: white;
+            padding: 2px 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .win95-button {
+            background: #c0c0c0;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #808080;
+            border-right: 2px solid #808080;
+            padding: 2px 8px;
+            cursor: pointer;
+        }
+        .win95-button:active {
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            padding: 3px 7px 1px 9px;
+        }
+
+        .win95-inset {
+            background: #fff;
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+        }
+
+        .torn-edge-top {
+            clip-path: polygon(0% 10px, 5% 0px, 10% 12px, 15% 2px, 20% 10px, 25% 0px, 30% 15px, 35% 5px, 40% 10px, 45% 0px, 50% 12px, 55% 2px, 60% 10px, 65% 0px, 70% 15px, 75% 5px, 80% 10px, 85% 0px, 90% 12px, 95% 2px, 100% 10px, 100% 100%, 0% 100%);
+        }
+
+        .torn-edge-bottom {
+            clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 10px), 95% 100%, 90% calc(100% - 12px), 85% calc(100% - 2px), 80% calc(100% - 10px), 75% 100%, 70% calc(100% - 15px), 65% calc(100% - 5px), 60% calc(100% - 10px), 55% 100%, 50% calc(100% - 12px), 45% calc(100% - 2px), 40% calc(100% - 10px), 35% 100%, 30% calc(100% - 15px), 25% calc(100% - 5px), 20% calc(100% - 10px), 15% 100%, 10% calc(100% - 12px), 5% calc(100% - 2px), 0% calc(100% - 10px));
+        }
+        
+        .dithered-image {
+            filter: grayscale(100%) contrast(1.2) sepia(20%) hue-rotate(180deg);
+            mix-blend-mode: multiply;
+        }
+        
+        .tape {
+            position: absolute;
+            width: 80px;
+            height: 25px;
+            background-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            transform: rotate(-5deg);
+            z-index: 10;
+        }
+
+        .tab-button {
+            border-bottom: none !important;
+            padding-bottom: 4px;
+            margin-bottom: -2px;
+            z-index: 10;
+            position: relative;
+        }
+        
+        .tab-button.inactive {
+            background: #c0c0c0;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-right: 2px solid #808080;
+            border-bottom: 2px solid #808080 !important;
+            margin-top: 2px;
+            padding-bottom: 2px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background min-h-screen pb-20 overflow-x-hidden relative">
+<!-- Top App Bar equivalent -->
+<header class="fixed top-0 w-full z-50 bg-primary dark:bg-primary flex justify-between items-center h-8 px-2 border-b-2 border-secondary shadow-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span class="font-window-title text-window-title text-on-primary uppercase tracking-wider">PORTFOLIO_SYSTEM_v1.0</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="win95-button h-6 w-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">minimize</span>
+</button>
+<button class="win95-button h-6 w-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">fullscreen</span>
+</button>
+<button class="win95-button h-6 w-6 flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-xs">close</span>
+</button>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto pt-16 px-4 md:px-margin-desktop relative">
+<!-- Main Portfolio Window -->
+<div class="win95-window mb-12 relative z-10">
+<div class="win95-titlebar font-window-title text-window-title">
+<span class="">C:\PORTFOLIO\ABOUT_ME.EXE</span>
+<button class="win95-button h-5 w-5 flex items-center justify-center bg-[#c0c0c0] text-black">X</button>
+</div>
+<div class="p-4 bg-[#c0c0c0]">
+<!-- Tabs -->
+<div class="flex gap-1 mb-0 relative">
+<button class="win95-button tab-button font-label-sm text-label-sm bg-[#c0c0c0]">About</button>
+<button class="win95-button tab-button inactive font-label-sm text-label-sm">Experience</button>
+<button class="win95-button tab-button inactive font-label-sm text-label-sm">Education</button>
+<button class="win95-button tab-button inactive font-label-sm text-label-sm">Projects</button>
+</div>
+<!-- Content Area -->
+<div class="win95-inset p-6 md:p-8 bg-surface-container-lowest torn-edge-bottom relative overflow-hidden">
+<div class="tape top-[-10px] left-[-20px] rotate-[-15deg]"></div>
+<div class="tape top-[-10px] right-[-20px] rotate-[15deg]"></div>
+<!-- About Section Content -->
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<!-- Left Column: Photo & Details -->
+<div class="w-full md:w-1/3 flex flex-col items-center">
+<div class="relative w-64 h-64 md:w-full md:h-80 border-4 border-on-surface p-2 bg-white transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+<img class="w-full h-full object-cover dithered-image border-2 border-outline-variant" data-alt="A stylized, high-contrast, slightly dithered portrait of a PhD student, cutout style against a white background, brutalist 90s aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJtSk8_3cUOQIRTJWipplUBTpwfISKdo4BXos-jkBD8Tt7ogXMBNEvkbqKTEsEd8hTfuhQkG8T_LypAnpPDD51KxzB_5H-uO9DvAFSEp0TRTwpl2feodzTy4gTU9JNFxl7clsy-EVhAyfeC4NW3DWdDWV4W06v4TS9QlVDE2ZbzWrR1orakmjnCVfGFuxpkA1O0bLnvKU1ApgC2oMuMj4NJMo-zHLGdKdc0_r8KcX3Hd9Rz1dPHeJDr242c4VJFGWp3A">
+<div class="absolute -bottom-4 right-4 bg-primary-container text-on-primary px-3 py-1 font-label-sm text-label-sm uppercase transform rotate-6 border-2 border-black">
+                                    Researcher
+                                </div>
+</div>
+<div class="mt-8 w-full win95-inset p-4 bg-surface-container"><h3 class="font-window-title text-window-title mb-2 uppercase border-b border-outline pb-1">Degrees</h3><ul class="space-y-2 font-label-sm text-label-sm"><li class="">• Ph.D. Computer Science</li><li class="">• M.S. Artificial Intelligence</li><li class="">• B.S. Software Engineering</li></ul></div>
+</div>
+<!-- Right Column: Bio -->
+<div class="w-full md:w-2/3">
+<h1 class="font-headline-xl text-headline-xl md:text-[100px] leading-none mb-4 text-on-surface uppercase tracking-tighter">WHO AM I<span class="text-primary-container">?</span></h1>
+<div class="font-headline-lg-mobile text-headline-lg-mobile mb-6 text-on-surface-variant">I'm <span class="border-b-4 border-primary-container pb-1">Jane Doe</span></div>
+<div class="font-body-md text-body-md space-y-4 max-w-2xl relative">
+<p class="bg-primary-fixed p-4 border-l-4 border-primary text-on-surface">
+                                    Ph.D. Candidate in Computer Science, specializing in Computer Vision and Machine Learning.
+                                </p>
+<p class="">
+                                    My research focuses on developing robust algorithms for 3D reconstruction from sparse 2D image data. I'm passionate about bridging the gap between theoretical AI models and practical, real-world applications.
+                                </p>
+<p class="">
+                                    When I'm not training models or writing papers, you can find me exploring the intersection of digital art and procedural generation.
+                                </p>
+<!-- Hand-drawn arrow SVG -->
+<svg class="absolute -right-4 top-20 w-24 h-24 hidden lg:block text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 100 100">
+<path d="M10,90 Q50,10 90,50"></path>
+<polygon fill="currentColor" points="90,50 80,40 85,55"></polygon>
+</svg>
+<div class="absolute -right-12 top-40 hidden lg:block font-label-sm text-label-sm rotate-12 bg-yellow-200 px-2 border border-black">
+                                    Read my papers!
+                                </div>
+</div>
+<div class="mt-8 mb-6"><h3 class="font-window-title text-window-title mb-4 uppercase border-b border-outline pb-1">Featured Projects</h3><div class="grid grid-cols-4 gap-4 mb-4"><div class="aspect-square win95-inset bg-surface-container-high flex items-center justify-center p-2 text-center text-xs font-bold">3D Recon</div><div class="aspect-square win95-inset bg-surface-container-high flex items-center justify-center p-2 text-center text-xs font-bold">Neural Art</div><div class="aspect-square win95-inset bg-surface-container-high flex items-center justify-center p-2 text-center text-xs font-bold">CV Toolkit</div><div class="aspect-square win95-inset bg-surface-container-high flex items-center justify-center p-2 text-center text-xs font-bold">Proc Gen</div></div><button class="text-primary font-label-sm text-label-sm flex items-center gap-1 hover:underline">Show More <span class="material-symbols-outlined text-sm">arrow_forward</span></button></div><div class="mt-8 flex gap-4">
+<button class="win95-button font-window-title text-window-title py-2 px-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span> Download CV
+                                </button>
+<div class="flex flex-col gap-2 font-label-sm text-label-sm"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span><span class="">jane.doe@university.edu</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">call</span><span class="">+1 234 567 890</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">link</span><a href="#" class="hover:underline">linkedin.com/in/janedoe</a></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative elements floating in the background -->
+<div class="absolute top-[50%] left-[5%] w-32 h-32 opacity-20 -z-10 bg-grid-pattern"></div>
+</main>
+<!-- Bottom Navigation Bar (Taskbar) -->
+<nav class="fixed bottom-0 w-full z-50 h-12 bg-secondary-fixed dark:bg-tertiary flex items-center px-1 gap-1 border-t-2 border-white shadow-[inset_2px_2px_0px_rgba(255,255,255,1)]">
+<!-- Start Button -->
+<button class="win95-button font-window-title text-window-title font-bold flex items-center gap-2 h-8 px-2 mr-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="">Start</span>
+</button>
+<!-- Nav Items -->
+<div class="flex items-center gap-1 flex-1 overflow-x-auto">
+<!-- Active Tab -->
+<button class="flex items-center gap-2 bg-secondary-container dark:bg-tertiary-container px-3 h-10 border-2 border-t-outline border-l-outline border-b-white border-r-white font-label-sm text-label-sm uppercase translate-y-0.5">
+<span class="material-symbols-outlined text-sm">person</span>
+<span class="">About</span>
+</button>
+<!-- Inactive Tabs -->
+<button class="flex items-center gap-2 px-3 h-10 border-2 border-t-white border-l-white border-b-outline border-r-outline font-label-sm text-label-sm uppercase hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm">work</span>
+<span class="">Experience</span>
+</button>
+<button class="flex items-center gap-2 px-3 h-10 border-2 border-t-white border-l-white border-b-outline border-r-outline font-label-sm text-label-sm uppercase hover:bg-surface-container-highest transition-colors hidden sm:flex">
+<span class="material-symbols-outlined text-sm">school</span>
+<span class="">Education</span>
+</button>
+<button class="flex items-center gap-2 px-3 h-10 border-2 border-t-white border-l-white border-b-outline border-r-outline font-label-sm text-label-sm uppercase hover:bg-surface-container-highest transition-colors hidden md:flex">
+<span class="material-symbols-outlined text-sm">folder_open</span>
+<span class="">Projects</span>
+</button>
+</div>
+<!-- System Tray -->
+<div class="win95-inset h-8 px-2 flex items-center gap-2 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">volume_up</span>
+<span id="clock" class="">4:19 PM</span>
+</div>
+</nav>
+<script>
+        // Simple clock for the taskbar
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; 
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('clock').textContent = hours + ':' + minutes + ' ' + ampm;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+
+</body></html>

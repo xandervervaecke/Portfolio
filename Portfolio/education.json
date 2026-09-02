@@ -1,0 +1,54 @@
+{
+  "education": [
+    {
+      "id": "phd",
+      "institution": "Hasselt University (UHasselt)",
+      "location": "Hasselt, Belgium",
+      "degree": "PhD",
+      "field": "Visual Computing",
+      "period": "2026 – present",
+      "startYear": 2026,
+      "endYear": null,
+      "current": true,
+      "highlights": [ 
+      ]
+    },
+    {
+      "id": "uhasselt-msc",
+      "institution": "Hasselt University (UHasselt)",
+      "location": "Hasselt, Belgium",
+      "degree": "MSc Computer Science — Summa Cum Laude",
+      "field": "AI & Data Management",
+      "period": "2023 – 2026",
+      "startYear": 2023,
+      "endYear": 2026,
+      "current": false,
+      "highlights": [
+        "Includes a transition year",
+        "Master's thesis: Region-Based Selective Remeshing for User-Guided Generative 3D Editing"
+      ]
+    },
+    {
+      "id": "pxl-bsc",
+      "institution": "PXL University of Applied Sciences and Arts",
+      "location": "Hasselt, Belgium",
+      "degree": "BSc Applied Computer Science",
+      "field": null,
+      "period": "2020 – 2023",
+      "startYear": 2020,
+      "endYear": 2023,
+      "current": false,
+      "highlights": [
+        "Bachelor's thesis on the performance of React Native"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "id": "dpo-gdpr",
+      "title": "Data Protection Officer (GDPR)",
+      "issuer": null,
+      "year": null
+    }
+  ]
+}

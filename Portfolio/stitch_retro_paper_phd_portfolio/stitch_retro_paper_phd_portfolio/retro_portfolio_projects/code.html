@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PORTFOLIO_SYSTEM_v1.0 - Projects</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@800;900&amp;family=JetBrains+Mono:wght@500&amp;family=Source+Sans+3:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#202222",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#464653",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#626363",
+                        "surface-dim": "#dadada",
+                        "surface-bright": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "outline": "#767684",
+                        "secondary-container": "#e0dfdf",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-tertiary-container": "#888989",
+                        "on-surface": "#1b1b1b",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1b1b",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-fixed": "#e0e0ff",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-primary-fixed-variant": "#3239a3",
+                        "primary": "#00003c",
+                        "primary-fixed-dim": "#bfc2ff",
+                        "on-primary-fixed": "#00006e",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary-container": "#777eea",
+                        "on-secondary-fixed-variant": "#464747",
+                        "primary-container": "#000080",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-tint": "#4b53bc",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "outline-variant": "#c6c5d5",
+                        "inverse-surface": "#303030",
+                        "background": "#f9f9f9",
+                        "secondary": "#5d5e5f",
+                        "inverse-primary": "#bfc2ff",
+                        "surface": "#f9f9f9",
+                        "on-error": "#ffffff",
+                        "tertiary": "#090b0c",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "grid-unit": "8px",
+                        "window-padding": "4px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Anybody"],
+                        "window-title": ["\"Source Sans 3\""],
+                        "headline-xl": ["Anybody"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["\"Source Sans 3\""],
+                        "headline-lg": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "32px", "fontWeight": "800" }],
+                        "window-title": ["13px", { "lineHeight": "16px", "fontWeight": "700" }],
+                        "headline-xl": ["80px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            background-image: 
+                linear-gradient(#e0dfdf 1px, transparent 1px),
+                linear-gradient(90deg, #e0dfdf 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        /* 1995 3D Bevels */
+        .bevel-raised {
+            border: 2px solid;
+            border-top-color: #ffffff;
+            border-left-color: #ffffff;
+            border-right-color: #808080;
+            border-bottom-color: #808080;
+            background-color: #c0c0c0;
+        }
+        
+        .bevel-pressed {
+            border: 2px solid;
+            border-top-color: #808080;
+            border-left-color: #808080;
+            border-right-color: #ffffff;
+            border-bottom-color: #ffffff;
+            background-color: #c0c0c0;
+        }
+        
+        .bevel-inset {
+            border: 2px solid;
+            border-top-color: #808080;
+            border-left-color: #808080;
+            border-right-color: #ffffff;
+            border-bottom-color: #ffffff;
+            background-color: #ffffff;
+        }
+
+        .window-shadow {
+            box-shadow: 4px 4px 0px 0px #000000;
+        }
+
+        /* Tape Overlay */
+        .tape-corner {
+            position: absolute;
+            width: 40px;
+            height: 15px;
+            background-color: rgba(255, 255, 230, 0.6);
+            border: 1px solid rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        
+        .tape-top-left { top: -5px; left: -10px; transform: rotate(-30deg); }
+        .tape-top-right { top: -5px; right: -10px; transform: rotate(30deg); }
+
+        /* Polaroid Filter */
+        .dither-img {
+            filter: grayscale(20%) sepia(20%) contrast(120%) brightness(110%);
+            mix-blend-mode: multiply;
+        }
+
+        /* Torn Edge SVG Mask */
+        .torn-top {
+            mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 L0,0 C5,5 15,0 25,5 C35,10 45,2 55,7 C65,12 75,3 85,8 C95,13 100,5 100,5 L100,10 Z" fill="black"/></svg>');
+            mask-size: 100% 10px;
+            mask-repeat: no-repeat;
+            mask-position: top;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body class="text-on-background min-h-screen flex flex-col pb-16 md:pb-0 pt-8 md:pt-12">
+<!-- TopAppBar (Hidden on Mobile, Visible on Desktop) -->
+<header class="hidden md:flex justify-between items-center w-full h-8 px-2 bg-primary dark:bg-primary border-b-2 border-secondary fixed top-0 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-primary">terminal</span>
+<span class="font-window-title text-window-title text-on-primary uppercase tracking-wider font-bold">PORTFOLIO_SYSTEM_v1.0</span>
+</div>
+<div class="flex gap-4">
+<a class="text-on-primary-fixed-variant font-label-sm text-label-sm hover:bg-primary-container transition-colors px-2 py-1" href="#">Start</a>
+<a class="text-on-primary-fixed-variant font-label-sm text-label-sm hover:bg-primary-container transition-colors px-2 py-1" href="#">About</a>
+<a class="text-on-primary font-bold font-label-sm text-label-sm hover:bg-primary-container transition-colors px-2 py-1 border-inset scale-95" href="#">Projects</a>
+<a class="text-on-primary-fixed-variant font-label-sm text-label-sm hover:bg-primary-container transition-colors px-2 py-1" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-1">
+<button class="bevel-raised w-5 h-5 flex items-center justify-center active:bevel-pressed bg-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">minimize</span>
+</button>
+<button class="bevel-raised w-5 h-5 flex items-center justify-center active:bevel-pressed bg-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">fullscreen</span>
+</button>
+<button class="bevel-raised w-5 h-5 flex items-center justify-center active:bevel-pressed bg-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-4 md:px-margin-desktop py-8 flex flex-col items-center">
+<!-- Projects Window Container -->
+<section class="w-full max-w-4xl bg-surface-container-lowest bevel-raised window-shadow mb-12 relative mt-4 md:mt-8">
+<div class="tape-corner tape-top-left"></div>
+<div class="tape-corner tape-top-right"></div>
+<!-- Window Title Bar -->
+<div class="bg-primary-container text-on-primary h-6 px-2 flex items-center justify-between cursor-move select-none">
+<span class="font-window-title text-window-title">C:\PROJECTS\GALLERY.EXE</span>
+<button class="bevel-raised w-4 h-4 flex items-center justify-center active:bevel-pressed bg-[#c0c0c0] text-black">
+<span class="material-symbols-outlined text-[12px] font-bold">close</span>
+</button>
+</div>
+<!-- Content Canvas -->
+<div class="p-4 md:p-8 border-l-[16px] border-surface-container-highest min-h-[600px] bg-white">
+<!-- Search & Filter Area (1995 Style) -->
+<div class="mb-8 p-4 bevel-raised bg-[#c0c0c0] flex flex-col md:flex-row gap-4 items-end md:items-center">
+<div class="flex-grow w-full md:w-auto">
+<label class="font-window-title text-window-title text-black block mb-1">Search File(s):</label>
+<div class="flex items-center">
+<span class="material-symbols-outlined absolute ml-2 text-on-surface-variant z-10 text-[16px]">search</span>
+<input class="w-full pl-8 pr-2 py-1 font-label-sm text-label-sm bevel-inset text-black focus:outline-none" placeholder="*.proj" type="text"/>
+</div>
+</div>
+<div class="w-full md:w-auto flex gap-4">
+<div class="flex flex-col">
+<label class="font-window-title text-window-title text-black block mb-1">Type:</label>
+<select class="py-1 px-2 font-label-sm text-label-sm bevel-inset text-black focus:outline-none w-full md:w-32">
+<option>All Files (*.*)</option>
+<option>AI/ML</option>
+<option>Computer Vision</option>
+<option>Web Dev</option>
+</select>
+</div>
+<button class="font-window-title text-window-title bevel-raised px-4 py-1 h-[26px] self-end active:bevel-pressed text-black flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">filter_list</span> Filter
+                         </button>
+</div>
+</div>
+<hr class="border-t-2 border-dashed border-outline mb-8"/>
+<!-- Polaroid Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative">
+<!-- Decorative Background Scrawl -->
+<div class="absolute inset-0 pointer-events-none opacity-20 z-0 flex items-center justify-center">
+<span class="font-headline-xl text-headline-xl text-primary-container -rotate-12">WORK_IN_PROGRESS</span>
+</div>
+<!-- Project Card 1: The Provided Image -->
+<article class="bg-white p-4 pb-8 shadow-[2px_4px_12px_rgba(0,0,0,0.2)] rotate-2 hover:rotate-0 transition-transform cursor-pointer relative z-10 border border-surface-container-high group">
+<div class="tape-corner tape-top-center left-1/2 -translate-x-1/2 -top-3 w-16"></div>
+<div class="aspect-[4/3] bg-surface-container-lowest overflow-hidden border border-outline-variant mb-4">
+<img alt="" class="w-full h-full object-cover dither-img group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwCvsjTTxWK6xMW9teKeHUHptJ5jPhUKmQUUc0Hm7PVBmQK2JB36cm-KgaVg3ZSEVTiVrZ3plQ_M-CQp98iTwBqICHqOo2XkZEdyOcD2pAb6tU1Wd3DIzQ_vH5iIqAH3qg2YrctxsRiqVgLAOYIRxlBfGhuTYTIbU2w3c31qSR32Jwjm99_SaOy51tanaJTJ0KeWrvOEobrGNBNtfQWVBdoOlZOQqEiykDq8sAYIe4EFznzodoB5pEmP57PbAIySKKZw"/>
+</div>
+<h3 class="font-window-title text-window-title text-lg mb-2 text-primary-container underline decoration-wavy decoration-outline-variant">Neural Net Visualizer</h3>
+<div class="flex flex-wrap gap-2 mb-2">
+<span class="font-label-sm text-[10px] bg-[#c0c0c0] bevel-raised px-1 border-t-white border-l-white border-r-gray-500 border-b-gray-500 text-black">AI/ML</span>
+<span class="font-label-sm text-[10px] bg-[#c0c0c0] bevel-raised px-1 border-t-white border-l-white border-r-gray-500 border-b-gray-500 text-black">School</span>
+</div>
+<p class="font-label-sm text-[11px] text-on-surface-variant leading-snug">Visualizing high-dimensional tensor data from a custom transformer model. Scraped web data mapped onto a 3D manifold.</p>
+<!-- Hand-drawn arrow overlay -->
+<div class="absolute -right-6 top-1/2 rotate-12 opacity-50 hidden md:block">
+<svg fill="none" height="30" stroke="black" stroke-linecap="round" stroke-width="2" viewbox="0 0 40 30" width="40">
+<path d="M5 15 Q 20 5 35 15 M 25 10 L 35 15 L 30 25"></path>
+</svg>
+</div>
+</article>
+<!-- Project Card 2 -->
+<article class="bg-white p-4 pb-8 shadow-[2px_4px_12px_rgba(0,0,0,0.2)] -rotate-3 hover:rotate-0 transition-transform cursor-pointer relative z-10 border border-surface-container-high group mt-4 md:mt-12">
+<div class="tape-corner tape-top-left -top-2 -left-2 rotate-45 w-12"></div>
+<div class="aspect-[4/3] bg-surface-container-lowest overflow-hidden border border-outline-variant mb-4 relative flex items-center justify-center">
+<!-- Placeholder Image with data-alt -->
+<img class="w-full h-full object-cover dither-img group-hover:scale-105 transition-transform duration-500" data-alt="A vintage 1990s style computer monitor displaying a wireframe mesh of a human face, rendered in bright neon green against a dark black background. The screen has noticeable scanlines and a slight curvature typical of CRT monitors. The surrounding desk area is cluttered with floppy disks and printed code listings, creating a nostalgic, digital archaeology vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxCxeRfiHPLFHmdsBZCMwH4RWJ7Jt4_-iLWrRex0J0-nYHUIS6Z0Nd0ApEzwiMPyQmtHtyR3VQI86Cp5SfBA5SJFl7KH4WaZ-2_610Z3IO54H8rlRT3YQXX8xJRip6Cj8BWEO_f_r9OqUisGx7FlEVhL7fIJ9nTm9lLqgM-edMQWazcNbWZoUZ1Qfn0qCKhNDi78JiblLw9vUjF9CGJbPaTSvtvn74d_h2eqKWEuXWiKYdNRW8YdMl"/>
+</div>
+<h3 class="font-window-title text-window-title text-lg mb-2 text-primary-container">FaceRec_1998</h3>
+<div class="flex flex-wrap gap-2 mb-2">
+<span class="font-label-sm text-[10px] bg-[#c0c0c0] bevel-raised px-1 border-t-white border-l-white border-r-gray-500 border-b-gray-500 text-black">Computer Vision</span>
+<span class="font-label-sm text-[10px] bg-[#c0c0c0] bevel-raised px-1 border-t-white border-l-white border-r-gray-500 border-b-gray-500 text-black">Extracurricular</span>
+</div>
+<p class="font-label-sm text-[11px] text-on-surface-variant leading-snug">Early experiments with OpenCV and rudimentary facial landmark detection algorithms. Runs at 2fps on a 486 processor.</p>
+</article>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Visible on Mobile, Hidden on Desktop) -->
+<nav class="md:hidden flex items-center px-1 gap-1 w-full bg-secondary-fixed dark:bg-tertiary-fixed-dim fixed bottom-0 z-50 h-12 shadow-[inset_2px_2px_0px_rgba(255,255,255,1)] border-t-2 border-white">
+<!-- Start -->
+<a class="flex items-center gap-2 px-3 h-10 border-2 border-t-white border-l-white border-b-outline border-r-outline hover:bg-surface-container-highest flex-1 justify-center" href="#">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-fixed dark:text-on-tertiary">grid_view</span>
+<span class="font-label-sm text-label-sm uppercase text-on-tertiary-fixed dark:text-on-tertiary hidden sm:block">Start</span>
+</a>
+<!-- About -->
+<a class="flex items-center gap-2 px-3 h-10 border-2 border-t-white border-l-white border-b-outline border-r-outline hover:bg-surface-container-highest flex-1 justify-center" href="#">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-fixed dark:text-on-tertiary">person</span>
+<span class="font-label-sm text-label-sm uppercase text-on-tertiary-fixed dark:text-on-tertiary hidden sm:block">About</span>
+</a>
+<!-- Projects (Active) -->
+<a class="flex items-center gap-2 bg-secondary-container dark:bg-tertiary-container px-3 h-10 border-2 border-t-outline border-l-outline border-b-white border-r-white translate-y-0.5 flex-1 justify-center" href="#">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-fixed dark:text-on-tertiary">folder_open</span>
+<span class="font-label-sm text-label-sm uppercase text-on-tertiary-fixed dark:text-on-tertiary hidden sm:block">Projects</span>
+</a>
+<!-- Contact -->
+<a class="flex items-center gap-2 px-3 h-10 border-2 border-t-white border-l-white border-b-outline border-r-outline hover:bg-surface-container-highest flex-1 justify-center" href="#">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-fixed dark:text-on-tertiary">mail</span>
+<span class="font-label-sm text-label-sm uppercase text-on-tertiary-fixed dark:text-on-tertiary hidden sm:block">Contact</span>
+</a>
+</nav>
+</body></html>

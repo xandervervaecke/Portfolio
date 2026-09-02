@@ -1,0 +1,65 @@
+{
+  "publications": [
+    {
+      "id": "asmr-3d-thesis",
+      "title": "Region-Based Selective Remeshing for User-Guided Generative 3D Editing",
+      "shortTitle": "ASMR-3D",
+      "type": "thesis",
+      "typeLabel": "Master's Thesis",
+      "venue": "Hasselt University (UHasselt)",
+      "year": 2026,
+      "authors": ["Xander Vervaecke"],
+      "tags": ["Generative AI", "3D", "Computer Graphics", "LLMs", "User Study", "Research"],
+      "summary": "A system for interactive, localized 3D model editing: paint the region you want changed, describe it in one sentence, and only that part gets rebuilt while the rest stays exactly as it was.",
+      "highlights": [
+        "Combines geometry processing, computer vision, and generative AI for user-guided 3D editing",
+        "ASMR-3D aligns old and new models, selects the edited region through a three-cue voting scheme, and rebuilds only those parts with a thin blending zone",
+        "Unchanged geometry stayed roughly 27× closer to the original than full-model regeneration",
+        "User study with 14 participants without prior 3D editing experience: 'excellent' on five of six UEQ scales, all 14 would use and recommend it again"
+      ],
+      "media": {
+        "images": ["images/thesis.png", "images/thesis2.png"],
+        "video": null,
+        "pdf": [
+          { "src": "/files/Scriptie_Xander_Vervaecke.pdf", "label": "Master's thesis (EN)" },
+          { "src": "/files/Xander_Vervaecke_vulgariserend.pdf", "label": "Popular-science summary (NL)" }
+        ]
+      },
+      "links": [],
+      "relatedProjectId": "asmr-3d-thesis"
+    },
+    {
+      "id": "liespy-sai-feature",
+      "title": "LieSpy.ai: Multi-Agent Fake News Detection",
+      "shortTitle": "LieSpy.ai",
+      "type": "feature",
+      "typeLabel": "Press Feature",
+      "venue": "SAI Update",
+      "year": 2025,
+      "authors": ["Xander Vervaecke"],
+      "tags": ["AI", "LLMs", "Multi-Agent", "Fact-Checking", "NLP"],
+      "summary": "Featured by SAI Update as \"Young IT Talent\" for a fake news detection system built on multiple collaborating AI agents.",
+      "highlights": [
+        "Recognized as \"Young IT Talent\" by SAI Update",
+        "Developed a system combining multiple AI agents for fact-checking and reasoning",
+        "Focused on improving the reliability and robustness of automated verification"
+      ],
+      "award": {
+        "title": "Young IT Talent",
+        "publication": "SAI Update",
+        "year": 2025,
+        "url": null
+      },
+      "media": {
+        "imagefill": true,
+        "images": ["images/LieSpy.png"],
+        "video": "https://youtu.be/cnLO6rG6ep4",
+        "pdf": [
+          { "src": "images/SAI Update 24 UHasselt Xander Vervaecke (1).pdf", "label": "SAI Update feature (NL)" }
+        ]
+      },
+      "links": [],
+      "relatedProjectId": "fake-news-detection"
+    }
+  ]
+}

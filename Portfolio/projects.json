@@ -1,0 +1,235 @@
+{
+  "projects": [
+    {
+      "id": "octane-visualizer",
+      "title": "Octane Audio Visualizer",
+      "subtitle": "Don Toliver: Hardstone Psycho / Octane",
+      "favorite": false,
+      "category": "graphics",
+      "tags": ["WebGL", "Shaders", "Audio", "Real-time", "Creative Coding"],
+      "year": 2026,
+      "extracurricular": true,
+      "summary": "An audio visualizer built around Don Toliver's Octane.",
+      "description": "",
+      "highlights": [
+        "Matching different audio features to visual elements",
+        "Live visualization of audio in using WebGL",
+        "Audio analysis and GPU rendering"
+      ], 
+      "technologies": ["WebGL", "Python"],
+      "media": { "images": ["images/octane.png","images/octane2.png","images/octane3.png","images/octane4.png"], "video": "https://youtu.be/9al0rLTBW34", "pdf": null },
+      "links": ["https://octanexander.vercel.app/"]
+    },
+    {
+      "id": "saudade-visualizer",
+      "title": "Saudade",
+      "subtitle": "Audio visualizer",
+      "favorite": true,
+      "category": "graphics",
+      "extracurricular": true,
+      "tags": ["OpenGL", "Shaders", "Audio", "Real-time", "Creative Coding"],
+      "year": 2026,
+      "summary": "An audio visualizer exploring mood and motion through GPU rendering.",
+      "description": "",
+      "highlights": [
+        "Real-time visualizer combining signal processing and GPU rendering",
+        "Live Audio processing in Python",
+        "Different realistic scenes to explore mood and motion in audio",
+        "Run on raspberry pi with a small display for a portable audio visualizer"
+      ],
+      "technologies": ["OpenGL", "Python"],
+      "media": { "images": ["images/suadade.png"], "video": "https://youtu.be/b1HR1JQlLTw", "pdf": null },
+      "links": []
+    },
+    {
+      "id": "fake-news-detection",
+      "title": "Fake News Detection System: LieSpy.ai",
+      "subtitle": "Featured by SAI Update: \"Young IT Talent\"",
+      "favorite": true,
+      "category": "ai",
+      "tags": ["AI", "LLMs", "Multi-Agent", "Fact-Checking", "NLP"],
+      "year": 2025,
+      "summary": "Multi-agent AI system for fact-checking and reasoning, recognized by SAI Update.",
+      "description": "",
+      "highlights": [
+        "Recognized as \"Young IT Talent\" by SAI Update for a fake news detection system",
+        "Developed a system combining multiple AI agents for fact-checking and reasoning",
+        "Focused on improving the reliability and robustness of automated verification"
+      ],
+      "technologies": ["LLMs", "Multi-agent systems"],
+      "media": { "images": ["images/LieSpy.png"], "imagefill": true, "video": "https://youtu.be/cnLO6rG6ep4", "pdf": "images/SAI Update 24 UHasselt Xander Vervaecke (1).pdf" },
+      "links": []
+    },
+    {
+      "id": "vr-tremor-eye-tracking",
+      "title": "VR Gaming with Eye Tracking (Bachelor's thesis at UHasselt)",
+      "subtitle": "Accessibility for people with tremors",
+      "favorite": false,
+      "category": "vr",
+      "tags": ["VR", "Eye Tracking", "Accessibility", "Games"],
+      "year": 2024,
+      "summary": "A VR system that lets people with tremors play games using eye tracking. (Bachelor's thesis at UHasselt)",
+      "description": "",
+      "highlights": [
+        "Developed a VR system to help people with tremors play games using eye tracking"
+      ],
+      "technologies": ["VR", "Eye tracking"],
+      "media": { "images": ["images/bapuhasselt.png"], "imagefill": true, "video": null, "pdf": null },
+      "links": []
+    },
+    {
+      "id": "mobile-apps",
+      "title": "Mobile Applications",
+      "subtitle": "Flutter / React Native",
+      "favorite": false,
+      "category": "mobile",
+      "tags": ["Flutter", "React Native", "Mobile", "App Store", "Google Play"],
+      "year": 2023,
+      "summary": "Helped develop mobile apps shipped to the App Store and Google Play. For example: Boardgamers (Alpine Digital) and VosLive.",
+      "description": "",
+      "highlights": [
+        "Developed mobile applications (Flutter / React Native) deployed to the App Store and Google Play"
+      ],
+      "technologies": ["Flutter", "React Native"],
+      "media": { "images": ["images/Boardgamers.png"], "video": null, "pdf": null },
+      "links": []
+    },
+ 
+     {
+      "id": "tapdata",
+      "title": "TapData",
+      "subtitle": "Beer data visualization",
+      "favorite": true,
+      "category": "data-viz",
+      "tags": ["Data Visualization", "Web", "Interactive", "Data"],
+      "year": 2025,
+      "summary": "An interactive visualization exploring beer data: styles, breweries, and how they relate.",
+      "description": "",
+      "highlights": [
+        "Built an interactive data visualization around beer information",
+        "the dataset covered styles, ABV, breweries, ratings, tastes,..",
+        "built using D3.js and three.js, with a focus on interactivity and exploration"
+      ],
+      "technologies": [],
+      "media": { "thumbnail": null, "images": ["images/tapdata.png"], "video": "https://youtu.be/p78JKHX9DLo", "pdf": null },
+      "links": []
+    },
+    {
+      "id": "opengl-game",
+      "title": "OpenGL Game from Scratch",
+      "subtitle": "Computer graphics project (group of 2 students)",
+      "favorite": false,
+      "category": "graphics",
+      "tags": ["OpenGL", "GLSL", "Shaders", "Game Development", "Computer Graphics", "C++"],
+      "year": 2024,
+      "summary": "A game built entirely from scratch in raw OpenGL with hand-written shaders, no game engine or helper libraries.",
+      "description": "",
+      "highlights": [
+        "Built a complete game from scratch in raw OpenGL with a fellow student, no engine or graphics library",
+        "Wrote the full rendering pipeline, including vertex and fragment shader programming",
+        "Implemented lighting, texturing, camera, collision, etc. by hand"
+      ],
+      "technologies": ["OpenGL", "GLSL", "C++"],
+      "team": "2 students",
+      "media": { "thumbnail": null, "images": ["images/opengl.png"], "video": "https://youtu.be/wf1Ug-mokiY", "pdf": null },
+      "links": []
+    },
+    {
+      "id": "animation-simulation",
+      "title": "Animation & Simulation Project",
+      "subtitle": "Avatar game",
+      "favorite": false,
+      "category": "graphics",
+      "tags": ["Animation", "Simulation", "Physics", "Computer Graphics"],
+      "year": 2026,
+      "summary": "Made a simple game with the focus on animation and simulation techniques, such as fluids, rigid bodies, character animation, L-systems and FFD.",
+      "description": "",
+      "highlights": [
+        "A simple airbending game with the focus on animation and simulation techniques",
+        "Techniques: fluids, rigid bodies, character animation, L-systems, FFD, and more",
+        "Sprite made with my own 3D model editor (thesis project)"
+      ],
+      "technologies": [],
+      "media": { "thumbnail": null, "images": ["images/animsim.png"], "video": "https://youtu.be/jtY7twodoO8", "pdf": null },
+      "links": []
+    },
+
+    {
+        "id": "asmr-3d-thesis",
+        "title": "ASMR-3D",
+        "subtitle": "Master's thesis: localized 3D model editing with generative AI",
+        "favorite": true,
+        "category": ["ai","graphics"],
+        "type": "thesis",
+        "tags": ["Generative AI", "3D", "Computer Graphics", "LLMs", "User Study", "Research"],
+        "year": 2026,
+        "summary": "A tool that lets anyone edit one specific part of an existing 3D model, while the rest stays exactly as it was.",
+        "description": "Editing a 3D model usually means learning Blender for months or letting an AI regenerate the whole thing and hoping it lands. My thesis explores a third way: paint over the part you want changed, describe it in one sentence, and only that region gets rebuilt.",
+        "highlights": [
+            "Built a pipeline where users paint the region to change directly on the model and describe the edit in a single sentence",
+            "An LLM clarifies and rewrites the prompt, then four image proposals preview the result before any 3D work happens",
+            "Developed ASMR-3D: a method that aligns old and new models, selects the edited region by weighing three cues against each other in a voting scheme, and rebuilds only those parts with a thin blending zone",
+            "Unchanged geometry stayed roughly 27× closer to the original than full-model regeneration",
+            "User study with 14 participants, none with prior 3D editing experience: 'excellent' on five of six UEQ scales, and all 14 said they would use and recommend it again"
+        ],
+        "technologies": ["Generative AI", "LLMs", "3D reconstruction", "Mesh processing"],
+        "media": {
+            "thumbnail": null,
+            "images": ["images/thesis.png","images/thesis2.png"],
+            "video": null,
+            "pdf": [
+                {
+                "src": "/files/Xander_Vervaecke_vulgariserend.pdf",
+                "label": "Popular-science summary (NL)"
+                },
+                {
+                "src": "/files/Scriptie_Xander_Vervaecke.pdf",
+                "label": "Master's thesis (EN)"
+                }
+            ]
+        },
+        "links": []
+        },
+        {
+        "id": "weather-photo-display",
+        "title": "Wi-Fi Photo Frame & Weather Display",
+        "subtitle": "A Frameo-inspired display for the house",
+        "favorite": false,
+        "category": "web",
+        "extracurricular": true,
+        "tags": ["Full-Stack", "IoT", "Home Project", "Web", "Self-Hosted"],
+        "year": 2026,
+        "summary": "A wall display that rotates through photos and shows the weather, anyone on the home Wi-Fi can upload to it.",
+        "description": "Inspired by Frameo, but self-hosted and open to the whole house: guests connected to the local network can push a photo to the frame from their phone, and it appears in the rotation. The display doubles as a weather panel.",
+        "highlights": [
+            "Built a rotating photo display paired with a live weather panel",
+            "Anyone connected to the local Wi-Fi can upload photos from their phone, no app or account needed",
+            "Self-hosted on the home network, so photos never leave the house",
+            "Runs on raspberry pi"
+        ],
+        "technologies": [],
+        "media": { "thumbnail": null, "images": [], "video": null, "pdf": null },
+        "links": []
+        },
+            
+        
+        {
+      "id": "more-projects",
+      "title": "And Many More",
+      "subtitle": null,
+      "favorite": false,
+      "extracurricular": true,
+      "category": "misc",
+      "isPlaceholder": true,
+      "tags": ["Side Projects", "Experiments"],
+      "year": null,
+      "summary": "These are just the highlights. I build things like this constantly, mostly for the fun of it.",
+      "description": "Alongside the projects listed here, I've built plenty of others, specifically countless web applications, mobile applications, and AI experiments.",
+      "highlights": [],
+      "technologies": [],
+      "media": { "thumbnail": null, "images": [], "video": null, "pdf": null },
+      "links": []
+    }
+  ]
+  
+}
