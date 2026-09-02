@@ -1,3 +1,5 @@
+import { asset } from '../lib/asset'
+
 /**
  * Everything about *you* that isn't in the JSON data files.
  * Edit here — nothing below is hardcoded anywhere else.
@@ -27,7 +29,7 @@ export const site = {
    * prefer; set it to null to keep the "PHOTO.BMP not found" frame.
    * Portrait orientation works best: the frame is 4:5.
    */
-  portrait: '/images/portrait.jpg' as string | null,
+  portrait: asset('/images/portrait.jpg') as string | null,
 
   /** Shown in the "TECH STACK" panel on the About pane. */
   stack: [
@@ -50,8 +52,8 @@ export const site = {
   },
 
   cv: [
-    { label: 'CV (English)', src: '/cv/CV_Xander_Vervaecke_Engels.pdf' },
-    { label: 'CV (Nederlands)', src: '/cv/CV_Xander_Vervaecke_Nederlands.pdf' },
+    { label: 'CV (English)', src: asset('/cv/CV_Xander_Vervaecke_Engels.pdf') },
+    { label: 'CV (Nederlands)', src: asset('/cv/CV_Xander_Vervaecke_Nederlands.pdf') },
   ],
 
   /**

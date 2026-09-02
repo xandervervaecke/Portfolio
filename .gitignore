@@ -1,1 +1,15 @@
-/Portfolio/portfolio/node_modules
+# Dependencies
+node_modules/
+
+# Build output — GitHub Actions builds this on every push, it is not committed.
+Portfolio/portfolio/dist/
+
+# Models that did not make the cut; kept locally, never shipped.
+Portfolio/models/trash/
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+*.local
+.vite/
+*.log

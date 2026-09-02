@@ -1,0 +1,70 @@
+# Builds the Vue app and publishes it to GitHub Pages on every push to main.
+#
+# Base path: a project page lives at https://<user>.github.io/<repo>/ , so the
+# build needs to know it is not at the root. Drop a CNAME file in
+# Portfolio/portfolio/public/ (one line, your domain) and the build switches to
+# the root base automatically — that is the only change a custom domain needs.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Lets you re-run a deploy by hand from the Actions tab.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; a newer push waits rather than cancelling the running one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Portfolio/portfolio
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: Portfolio/portfolio/package-lock.json
+
+      - run: npm ci
+
+      - name: Work out the base path
+        id: base
+        run: |
+          if [ -f public/CNAME ]; then
+            echo "Custom domain: $(cat public/CNAME) — serving from the root."
+            echo "path=/" >> "$GITHUB_OUTPUT"
+          else
+            echo "No CNAME — serving from /${GITHUB_REPOSITORY#*/}/."
+            echo "path=/${GITHUB_REPOSITORY#*/}/" >> "$GITHUB_OUTPUT"
+          fi
+
+      - run: npm run build
+        env:
+          BASE_PATH: ${{ steps.base.outputs.path }}
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: Portfolio/portfolio/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

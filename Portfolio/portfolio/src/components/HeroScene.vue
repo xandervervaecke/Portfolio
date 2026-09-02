@@ -9,6 +9,7 @@ import { sceneConfig, type ModelSpec } from '../three/sceneConfig'
 import { ScreenSim } from '../three/screenSim'
 import { createIntro, type Intro } from '../three/effects'
 import { registerBootSequence, setSceneProgress, useHeroBoot } from '../composables/useHeroBoot'
+import { asset } from '../lib/asset'
 
 /* ============================================================================
  *  THE OFFICE
@@ -121,12 +122,12 @@ function textureUrlFor(url: string, spec: ModelSpec) {
   // of these files turns out to be a .png, so anything awkward gets named
   // outright in the model's `textures` map.
   const mapped = spec.textures?.[name] ?? spec.textures?.[name.replace(/\.[a-z0-9]+$/i, '')]
-  if (mapped) return mapped
+  if (mapped) return asset(mapped)
 
   // Otherwise: exporters that round-tripped through glTF drop the extension
   // entirely — ryder.fbx asks for a bare "Image_0_003". Those default to .jpg.
   if (!/\.[a-z0-9]+$/i.test(name)) name += '.jpg'
-  return `/models/textures/${name}`
+  return asset(`/models/textures/${name}`)
 }
 
 /** A 1×1 transparent PNG, used to stand in for textures we know are missing. */
@@ -178,7 +179,7 @@ function makeManager(spec: ModelSpec) {
     // textures need rewriting. Note that FBXLoader has already joined its own
     // resourcePath on by this point, so a texture can arrive looking like a
     // real /models/textures/ path and still be missing its extension.
-    if (url === spec.url || MODEL_FILE.test(url)) return url
+    if (url === spec.url || MODEL_FILE.test(url)) return asset(url)
     // A blob: URL means the texture travelled inside the model file. That is
     // the only case where we know it is the right one.
     if (/^(blob:|data:)/.test(url)) {
@@ -303,7 +304,7 @@ function loadModel(spec: ModelSpec): Promise<THREE.Object3D | null> {
   const loader = isFbx ? new FBXLoader(manager) : new GLTFLoader(manager)
   // FBXLoader joins bare texture names onto this; our URL modifier fixes the
   // absolute ones, this covers anything that arrives already relative.
-  loader.setResourcePath('/models/textures/')
+  loader.setResourcePath(asset('/models/textures/'))
 
   return new Promise((resolve) => {
     loader.load(
@@ -391,7 +392,7 @@ function setupScreens(root: THREE.Object3D) {
 function loadBackground(url: string): Promise<void> {
   return new Promise((resolve) => {
     new THREE.TextureLoader().load(
-      url,
+      asset(url),
       (tex) => {
         tex.colorSpace = THREE.SRGBColorSpace
         if (scene) scene.background = tex

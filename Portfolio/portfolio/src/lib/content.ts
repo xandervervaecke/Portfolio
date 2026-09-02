@@ -1,5 +1,7 @@
 // The JSON data files live at the repository root, one level above this app —
 // that is the single source of truth, edit them there.
+import { asset } from './asset'
+
 import projectsRaw from '@data/projects.json'
 import workRaw from '@data/work.json'
 import educationRaw from '@data/education.json'
@@ -25,7 +27,7 @@ export function assetUrl(path?: string | null): string {
   if (!path) return ''
   if (/^(https?:)?\/\//.test(path)) return path
   const clean = path.replace(/^\.?\//, '')
-  return '/' + clean.split('/').map(encodeURIComponent).join('/')
+  return asset(clean.split('/').map(encodeURIComponent).join('/'))
 }
 
 export function pdfList(media?: Media): PdfRef[] {

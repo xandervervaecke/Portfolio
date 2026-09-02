@@ -105,6 +105,10 @@ function rootContent(): Plugin {
         copyDir(dir, path.join(dist, prefix.slice(1)))
       }
 
+      // Jekyll skips files and folders that start with an underscore; the
+      // marker turns it off for good on GitHub Pages.
+      fs.writeFileSync(path.join(dist, '.nojekyll'), '')
+
       const cvDir = path.join(dist, 'cv')
       fs.mkdirSync(cvDir, { recursive: true })
       for (const name of CV_FILES) {
@@ -115,8 +119,20 @@ function rootContent(): Plugin {
   }
 }
 
+/**
+ * Where the site will be served from.
+ *
+ *   /            local dev, and GitHub Pages once a custom domain is set
+ *   /Portfolio/  GitHub Pages without a custom domain (project page)
+ *
+ * The deploy workflow sets BASE_PATH; every runtime asset URL goes through
+ * src/lib/asset.ts, which puts this in front.
+ */
+const base = process.env.BASE_PATH || '/'
+
 // https://vite.dev/config/
 export default defineConfig({
+  base,
   plugins: [vue(), vueDevTools(), rootContent()],
   resolve: {
     alias: {

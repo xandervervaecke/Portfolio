@@ -5,6 +5,11 @@ import { site } from '../data/site'
 import { useDesktop } from '../composables/useDesktop'
 import { useHeroBoot } from '../composables/useHeroBoot'
 import { sceneConfig } from '../three/sceneConfig'
+import { asset } from '../lib/asset'
+
+/* CSS url() is never rewritten for the deploy base, so the veil's backdrop
+ * comes in as a custom property instead. */
+const veilImage = `url('${asset('/images/background.jpg')}')`
 
 // three.js is ~600 kB; keep it out of the main bundle.
 const HeroScene = defineAsyncComponent(() => import('./HeroScene.vue'))
@@ -78,7 +83,7 @@ onBeforeUnmount(() => {
       <HeroScene :paused="desktopOpen" />
       <div class="hero-vignette" />
     </div>
-    <div class="hero-veil" />
+    <div class="hero-veil" :style="{ '--veil-image': veilImage }" />
 
     <!-- Covers everything until the scene has finished loading. Deliberately
          plain: no photo, nothing to load before it can show. -->
@@ -156,7 +161,7 @@ onBeforeUnmount(() => {
    *
    * Note this layer is opaque by design — an alpha suffix in the colour
    * (#f4f1ec10 is 6% opaque) would leave the 3D scene visible through it. */
-  background: var(--page) url('/images/background.jpg') center / cover no-repeat;
+  background: var(--page) var(--veil-image) center / cover no-repeat;
 }
 
 /* The transition lives on the open state only. Removing the class removes the
